@@ -1,0 +1,570 @@
+/* ======================================================
+   CARDS DA HOME
+====================================================== */
+
+.vendedores {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.card-vendedor {
+    min-height: 260px;
+
+    padding: 34px 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+
+    border: 1px solid #dce6f1;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: var(--texto-principal);
+
+    box-shadow: var(--sombra);
+
+    transition: 0.2s;
+}
+
+.card-vendedor::before {
+    content: "";
+
+    width: 78px;
+    height: 78px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeeff,
+            #edf7ff
+        );
+}
+
+.card-vendedor:nth-child(2)::before {
+    background:
+        linear-gradient(
+            135deg,
+            #dcf7ef,
+            #edfaf6
+        );
+}
+
+.card-vendedor:nth-child(3)::before {
+    background:
+        linear-gradient(
+            135deg,
+            #efe4ff,
+            #f7f0ff
+        );
+}
+
+.card-vendedor:hover {
+    transform: translateY(-4px);
+
+    border-color: #b9d8f2;
+
+    box-shadow:
+        0 10px 28px rgba(30, 72, 110, 0.13);
+}
+
+.card-vendedor h2 {
+    font-size: 23px;
+
+    margin-bottom: 8px;
+
+    color: #10213b;
+}
+
+.card-vendedor p {
+    margin-bottom: 15px;
+
+    color: #5d748b;
+
+    text-align: center;
+}
+
+.card-vendedor span {
+    font-size: 0;
+
+    color: var(--azul-principal);
+}
+
+.card-vendedor span::after {
+    content: "→";
+
+    font-size: 30px;
+}
+
+/* ======================================================
+   BLOCOS
+====================================================== */
+
+.formulario-falta,
+.faltas-registradas {
+    background-color: white;
+
+    padding: 22px;
+
+    border: 1px solid var(--borda);
+
+    border-radius: 11px;
+
+    box-shadow: var(--sombra);
+}
+
+.formulario-falta {
+    margin-bottom: 22px;
+}
+
+.formulario-falta h2,
+.faltas-registradas h2 {
+    font-size: 23px;
+
+    color: var(--texto-principal);
+}
+
+.formulario-falta h2 {
+    margin-bottom: 20px;
+}
+
+.faltas-registradas h2 {
+    margin-bottom: 18px;
+}
+
+/* ======================================================
+   FORMULÁRIO DE FALTAS
+====================================================== */
+
+#formFalta {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        1.4fr
+        1fr
+        1fr
+        1fr
+        auto;
+
+    gap: 14px;
+
+    align-items: end;
+}
+
+/* ======================================================
+   FORMULÁRIO DE PRODUTOS
+====================================================== */
+
+#formProduto {
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        auto;
+
+    gap: 14px;
+
+    align-items: end;
+}
+
+/* ======================================================
+   FORMULÁRIO DE VENDEDOR
+====================================================== */
+
+#formVendedor {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto;
+
+    gap: 14px;
+
+    align-items: end;
+}
+
+/* ======================================================
+   FORMULÁRIO DE ROTAS
+====================================================== */
+
+#formRota {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        1fr
+        1fr
+        auto;
+
+    gap: 14px;
+
+    align-items: end;
+}
+
+/* ======================================================
+   CAMPOS
+====================================================== */
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.campo label {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+
+    color: #374b63;
+}
+
+.campo input,
+.campo select {
+    height: 42px;
+
+    border: 1px solid #cfd9e4;
+
+    border-radius: 7px;
+
+    padding: 0 12px;
+
+    background-color: white;
+
+    font-size: 14px;
+
+    color: var(--texto-principal);
+
+    transition: 0.2s;
+}
+
+.campo input:focus,
+.campo select:focus {
+    outline: none;
+
+    border-color: var(--azul-principal);
+
+    box-shadow:
+        0 0 0 3px rgba(13, 120, 232, 0.10);
+}
+
+.campo input[readonly] {
+    background-color: #f2f6fa;
+
+    color: #8190a2;
+
+    cursor: not-allowed;
+}
+
+/* ======================================================
+   BOTÕES PRINCIPAIS
+====================================================== */
+
+#formFalta button[type="submit"],
+#formProduto button[type="submit"],
+#formVendedor button[type="submit"],
+#formRota button[type="submit"] {
+    height: 42px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 0 20px;
+
+    background-color: var(--azul-principal);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+#formFalta button[type="submit"]:hover,
+#formProduto button[type="submit"]:hover,
+#formVendedor button[type="submit"]:hover,
+#formRota button[type="submit"]:hover {
+    background-color: var(--azul-hover);
+
+    transform: translateY(-1px);
+}
+
+/* ======================================================
+   TOPO DA LISTAGEM
+====================================================== */
+
+.topo-listagem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 16px;
+}
+
+.topo-listagem h2 {
+    margin-bottom: 0;
+}
+
+.topo-listagem input {
+    width: 260px;
+
+    height: 38px;
+
+    padding: 0 12px;
+
+    border: 1px solid #cfd9e4;
+
+    border-radius: 7px;
+
+    outline: none;
+}
+
+.topo-listagem input:focus {
+    border-color: var(--azul-principal);
+}
+
+/* ======================================================
+   TABELAS
+====================================================== */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    overflow: hidden;
+
+    border-radius: 7px;
+}
+
+thead {
+    background-color: #f1f6fb;
+}
+
+th,
+td {
+    padding: 12px 14px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    font-size: 13px;
+
+    color: #33475e;
+
+    font-weight: 700;
+}
+
+td {
+    font-size: 14px;
+
+    color: #26384d;
+}
+
+tbody tr:hover {
+    background-color: #f8fbfe;
+}
+
+/* ======================================================
+   BOTÕES DA TABELA
+====================================================== */
+
+td button {
+    min-height: 32px;
+
+    border: 1px solid transparent;
+
+    border-radius: 6px;
+
+    padding: 6px 10px;
+
+    font-size: 13px;
+
+    margin-right: 6px;
+
+    transition: 0.2s;
+}
+
+td button:first-child {
+    background-color: #e8f2ff;
+
+    border-color: #bbd8ff;
+
+    color: #0878e8;
+}
+
+td button:first-child:hover {
+    background-color: #d8e9ff;
+}
+
+td button:last-child {
+    background-color: #fff0f1;
+
+    border-color: #ffc8cd;
+
+    color: #df3341;
+}
+
+td button:last-child:hover {
+    background-color: #ffe1e4;
+}
+
+/* ======================================================
+   ROTAS
+====================================================== */
+
+.rotas-adicionadas {
+    margin-top: 22px;
+}
+
+.rotas-adicionadas h3 {
+    margin-bottom: 12px;
+
+    font-size: 16px;
+}
+
+.rota-item {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 11px 12px;
+
+    margin-bottom: 8px;
+
+    background-color: #f7fbff;
+
+    border: 1px solid #dce8f3;
+
+    border-radius: 7px;
+}
+
+.rota-item span {
+    font-size: 14px;
+
+    color: #33475e;
+}
+
+.rota-item button {
+    border: 1px solid #ffc8cd;
+
+    background-color: #fff0f1;
+
+    color: #df3341;
+
+    border-radius: 6px;
+
+    padding: 6px 10px;
+}
+
+#avisoRota {
+    margin-bottom: 14px;
+
+    color: var(--texto-secundario);
+
+    font-size: 13px;
+}
+
+/* ======================================================
+   RESPONSIVIDADE DOS COMPONENTES
+====================================================== */
+
+@media (max-width: 1100px) {
+
+    #formFalta {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    #formProduto {
+        grid-template-columns:
+            1fr
+            1fr;
+    }
+
+    #formProduto button[type="submit"] {
+        grid-column: 1 / -1;
+    }
+
+    #formRota {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    #formRota button[type="submit"] {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 950px) {
+
+    .vendedores {
+        grid-template-columns:
+            1fr;
+    }
+}
+
+@media (max-width: 760px) {
+
+    #formFalta,
+    #formProduto,
+    #formVendedor,
+    #formRota {
+        grid-template-columns: 1fr;
+    }
+
+    #formProduto button[type="submit"],
+    #formFalta button[type="submit"],
+    #formVendedor button[type="submit"],
+    #formRota button[type="submit"] {
+        width: 100%;
+
+        grid-column: auto;
+    }
+
+    .topo-listagem {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .topo-listagem input {
+        width: 100%;
+    }
+
+    .faltas-registradas {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 760px;
+    }
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Faltas</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <a href="index.html" class="voltar">← Voltar</a>
+
+        <section class="cabecalho">
+            <h1>Cadastro de Faltas</h1>
+            <p>Registre as faltas de produtos por vendedor.</p>
+        </section>
+
+        <section class="formulario-falta">
+
+            <h2>Registrar falta</h2>
+
+            <form id="formFalta">
+
+                <div class="campo">
+                    <label for="vendedor">
+                        Vendedor
+                    </label>
+
+                    <select id="vendedor" required>
+                        <option value="">
+                            Selecione um vendedor
+                        </option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="produto">
+                        Produto
+                    </label>
+
+                    <select id="produto" required>
+                        <option value="">
+                            Selecione um produto
+                        </option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="quantidadeFalta">
+                        Quantidade que falta
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantidadeFalta"
+                        min="1"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="quantidadeTotal">
+                        Quantidade total no carro
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantidadeTotal"
+                        readonly
+                        placeholder="Automático"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="data">
+                        Data
+                    </label>
+
+                    <input
+                        type="date"
+                        id="data"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Registrar falta
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="faltas-registradas">
+
+            <div class="topo-listagem">
+                <h2>Faltas registradas</h2>
+
+                <input
+                    type="text"
+                    id="pesquisaFalta"
+                    placeholder="Pesquisar registros..."
+                >
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Vendedor</th>
+                        <th>Produto</th>
+                        <th>Qtd. falta</th>
+                        <th>Qtd. total</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabelaFaltas">
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/faltas.js"></script>
+
+    <script src="js/layout.js"></script>
+    <script>
+    criarLayout("faltas");
+    </script>
+
+    <script src="js/api.js"></script>
+    <script src="js/faltas.js"></script>
+
+</body>
+</html>

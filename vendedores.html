@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vendedores</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <a href="index.html" class="voltar">← Voltar</a>
+
+        <section class="cabecalho">
+            <h1>Cadastro de Vendedores</h1>
+            <p>Cadastre os vendedores e gerencie suas rotas.</p>
+        </section>
+
+        <section class="formulario-falta">
+
+            <h2>Adicionar vendedor</h2>
+
+            <form id="formVendedor">
+
+                <div class="campo">
+                    <label for="nomeVendedor">
+                        Nome do vendedor
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomeVendedor"
+                        placeholder="Digite o nome do vendedor"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Adicionar vendedor
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="formulario-falta">
+
+            <h2>Rotas</h2>
+
+            <div id="avisoRota">
+                Selecione um vendedor cadastrado para adicionar rotas.
+            </div>
+
+            <form id="formRota">
+
+                <div class="campo">
+                    <label for="vendedorRota">
+                        Vendedor
+                    </label>
+
+                    <select id="vendedorRota" required>
+                        <option value="">
+                            Selecione um vendedor
+                        </option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="cidade">
+                        Cidade
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cidade"
+                        placeholder="Digite a cidade"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="bairro">
+                        Bairro
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bairro"
+                        placeholder="Digite o bairro"
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Adicionar rota
+                </button>
+
+            </form>
+
+            <div class="rotas-adicionadas">
+
+                <h3>Rotas cadastradas</h3>
+
+                <div id="listaRotas">
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="faltas-registradas">
+
+            <h2>Vendedores cadastrados</h2>
+
+            <div class="campo">
+                <input
+                    type="text"
+                    id="pesquisaVendedor"
+                    placeholder="Pesquisar vendedor..."
+                >
+            </div>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Rotas</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabelaVendedores">
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/vendedores.js"></script>
+
+    <script src="js/layout.js"></script>
+    <script>
+        criarLayout("vendedores");
+    </script>
+
+    <script src="js/api.js"></script>
+    <script src="js/vendedores.js"></script>
+
+</body>
+</html>
