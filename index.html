@@ -1,55 +1,12 @@
-<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Controle de Faltas</title>
-
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/components.css">
-    
-</head>
-
-<body>
-
-    <main class="container">
-
-        <section class="cabecalho">
-            <h1>Controle de Faltas</h1>
-            <p>Selecione uma opção para continuar</p>
-        </section>
-
-        <section class="vendedores">
-
-            <a href="faltas.html" class="card-vendedor">
-                <h2>Faltas</h2>
-                <p>Cadastro e gerenciamento de faltas</p>
-                <span>Acessar</span>
-            </a>
-
-            <a href="produtos.html" class="card-vendedor">
-                <h2>Produtos</h2>
-                <p>Cadastro e gerenciamento de produtos</p>
-                <span>Acessar</span>
-            </a>
-
-            <a href="vendedores.html" class="card-vendedor">
-                <h2>Vendedores</h2>
-                <p>Cadastro de vendedores e rotas</p>
-                <span>Acessar</span>
-            </a>
-
-        </section>
-
-    </main>
-
-    <script src="js/layout.js"></script>
-
-    <script>
-        criarLayout("inicio");
-    </script>
-
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
